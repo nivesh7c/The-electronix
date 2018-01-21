@@ -1,0 +1,53 @@
+	
+
+	step to established the connection with mysql.
+
+
+				 connect
+					|
+ 			check the connection
+ 					|
+ 		  make the statment(query)
+ 		  			|
+ 		  	execute the query
+ 		  			|
+ 		 get the result(data/true/false)
+ 		 			|
+ 		 	process your data
+ 		 			|
+ 		 	close the connection
+
+
+
+ 	1) established the connection
+ 	----------------------------------------   
+ 	$con=mysqli_connect("localhost","username","password","database")  or die("could not established");
+
+ 		if(mysqli_connect_error())
+ 		{
+ 			die("could not established...");
+ 		}
+
+ 			$q="query here";
+
+ 		$res=$mysqli_query($con,$q);
+
+ 			$res : is result set object 
+
+ 				:collection of record 
+
+ 			fetch the record from resultset
+
+ 			while($row=mysqli_fetch_array($res,MYSQLI_ASSOC))
+ 			{
+ 				next row/record every time.
+ 			}
+ 			
+ 			MYSQLI_ASSOC,MYSQLI_NUM
+
+
+ 				$numrows=mysqli_num_rows($res);
+ 		
+
+ 					mysqli_close($con);
+
